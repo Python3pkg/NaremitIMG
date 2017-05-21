@@ -5,7 +5,7 @@ from setuptools import find_packages
 setup(
     name='django-naremitimg',
     version='0.1.3',
-    author=u'Jon Combe',
+    author='Jon Combe',
     author_email='pypi@joncombe.net',
     packages=find_packages(),
     include_package_data=True,

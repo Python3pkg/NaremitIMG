@@ -3,11 +3,11 @@ from PIL import ImageEnhance
 from PIL import ImageFilter
 from PIL import ImageOps
 
-from StringIO import StringIO
+from io import StringIO
 import hashlib
 import pickle
 import os
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 
 from django.conf import settings
 from django.http import HttpResponse
@@ -63,7 +63,7 @@ class NaremitIMG:
             r = requests.get(url)
             return r.content
         else:
-            r = urllib2.urlopen(url)
+            r = urllib.request.urlopen(url)
             return f.read()
 
     def process(self, command, args):
